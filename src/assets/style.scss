@@ -1,0 +1,79 @@
+$primary:#ca2a2a;
+$dark:#262f39;
+$gray:#323232;
+$light:#e8dfdf;
+$links: #668CB7;
+$secondary: #5A85CA;
+
+@import '_queue';
+@import '_search_results';
+
+body {
+  color: $dark;
+  background: $light;
+}
+
+#app {
+  background-image: url(./main-bg.png);
+  background-position: 50% 100px;
+  background-repeat: no-repeat;
+}
+
+.progress {
+  height: 1rem;
+  border-radius: 2rem;
+  .progress-bar {
+    background-color: $dark;
+    color: $primary;
+    font-weight: bold;
+  }
+  span {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.navheader {
+  background-color: $primary !important;
+  input,
+  input:focus {
+    border-radius: 100px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+#player {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cover {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  background-color: $dark;
+  img {
+    width: 100%;
+  }
+  div {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    color: $light;
+    text-shadow: 1px 1px 1px $dark;
+  }
+}
+
+.player-actions {
+  .fa {
+    cursor: pointer;
+    &:hover {
+      color: $light;
+    }
+  }
+}
+

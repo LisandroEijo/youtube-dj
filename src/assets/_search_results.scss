@@ -1,0 +1,18 @@
+.search-results-enter-active,
+.search-results-leave-active {
+  transition: all 0.4s;
+  transition-delay: 0s;
+  transform-origin: left center;
+}
+
+.search-results-enter {
+  transform: rotateY(90deg);
+}
+
+.search-results-enter-to {
+  transform: rotateY(0deg);
+}
+
+.search-results-leave-to {
+  transform: rotateY(90deg);
+}
