@@ -16,3 +16,9 @@
 .search-results-leave-to {
   transform: rotateY(90deg);
 }
+.search-results {
+  background-image: url(./main-bg.png);
+  background-position: 50% 100px;
+  background-repeat: no-repeat;
+  padding-top: 1rem; 
+}

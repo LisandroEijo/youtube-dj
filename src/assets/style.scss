@@ -13,13 +13,8 @@ body {
   background: $light;
 }
 
-#app {
-  background-image: url(./main-bg.png);
-  background-position: 50% 100px;
-  background-repeat: no-repeat;
-}
-
 .progress {
+  cursor: pointer;
   height: 1rem;
   border-radius: 2rem;
   .progress-bar {
@@ -34,13 +29,39 @@ body {
 }
 
 .navheader {
+  top: 0;
+  z-index: 1;
+  position: sticky;
   background-color: $primary !important;
+
+  .fa {
+    cursor: pointer;
+    &.active,
+    &:hover {
+      color: $light;
+    }
+  }
+
+  form {
+    position: relative;
+    .fa {
+      color: $light;
+      &:hover {
+        color: $dark;
+      } 
+      position: absolute;
+      right: 1rem;
+      top: 0.1rem;
+      cursor: pointer;
+    }
+  }
   input,
   input:focus {
     border-radius: 100px;
     outline: none;
     box-shadow: none;
     border: none;
+    padding-right: 3rem;
   }
 }
 
@@ -67,13 +88,3 @@ body {
     text-shadow: 1px 1px 1px $dark;
   }
 }
-
-.player-actions {
-  .fa {
-    cursor: pointer;
-    &:hover {
-      color: $light;
-    }
-  }
-}
-

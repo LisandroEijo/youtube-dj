@@ -10,6 +10,7 @@ class PlayerApi {
     this.socket = socket
     this.isPaused = true
     this.isMusicServer = false
+    this.isMusicServerSet = false
     this.timePlayed = 0
     this.trackLength = 0
     this.trackDetails = {
@@ -23,6 +24,10 @@ class PlayerApi {
     this.searchResults = []
     this.searching = false
     this.queue = []
+  }
+
+  clearSearch () {
+    this.searchResults = []
   }
 
   getTimePlayeDisplay () {
@@ -58,9 +63,17 @@ class PlayerApi {
     this.initializeSocket()
     this.getQueue()
     this.getCurrentTrack()
+    HTTP.get('/server/').then(({data}) => {
+      if (data === '') {
+        this.isMusicServerSet = false
+      } else {
+        this.isMusicServerSet = data
+      }
+    })
   }
   convertIntoMusicServer () {
     if (this.isMusicServer) { return }
+    if (this.isMusicServerSet) { return }
     this.isMusicServer = true
     this.initializeYoutubePlayer()
     if (this.currentTrack !== null) {
@@ -88,12 +101,21 @@ class PlayerApi {
   }
   initializeSocket () {
     var that = this
+    this.socket.on('server.set', function (data) {
+      that.isMusicServerSet = data
+    })
     this.socket.on('player.pause', function (data) {
       // console.log('player.pause')
       that.isPaused = true
       if (that.isMusicServer) {
         that.youtubePlayer.pause()
       }
+    })
+    this.socket.on('player.seek-to', function (data) {
+      if (!that.isMusicServer) { return }
+      var seconds = that.youtubePlayer.getDuration() * data.position / 100
+      that.timePlayed = seconds
+      that.youtubePlayer.seek(seconds)
     })
     this.socket.on('player.resume', function (data) {
       // console.log('player.resume')
@@ -137,10 +159,15 @@ class PlayerApi {
       this.currentTrack = data.videoId
     })
   }
-  queueTrack (videoId, title) {
+  queueTrackNext (videoId) {
+    HTTP.post('/queue/next/', {
+      videoId: videoId
+    })
+  }
+
+  queueTrack (videoId) {
     HTTP.post(config.API_QUEUE, {
-      videoId: videoId,
-      title: title
+      videoId: videoId
     })
   }
   unqueueTrack (videoId) {
@@ -163,6 +190,12 @@ class PlayerApi {
 
   prevTrack () {
     HTTP.post('/prev/')
+  }
+
+  seekToPercentage (position) {
+    HTTP.post('/seek-to/', {
+      position: position
+    })
   }
 
   isInQueue (videoId) {
