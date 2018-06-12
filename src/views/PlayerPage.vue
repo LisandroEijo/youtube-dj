@@ -3,7 +3,7 @@
     <b-container fluid>
       <Nav></Nav>
       <b-row>
-        <b-col md="7">
+        <b-col md="7" class="p-0">
           <SearchResults></SearchResults>
         </b-col>
         <b-col md="5" class="p-0">

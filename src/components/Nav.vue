@@ -2,7 +2,7 @@
   <b-row class="navheader p-2">
     <b-col md="5" align-self="center" class="p-1">
       <form v-on:submit.prevent="onSubmit">
-        <input class="form-control" @focus="hasFocus = true" @blur="closeAutotomplete()" @input="searchInput" v-model="search" type="search" placeholder="Search" aria-label="Search">
+        <input ref="searchBox" class="form-control" @focus="hasFocus = true" @blur="closeAutotomplete()" @input="searchInput" v-model="search" type="search" placeholder="Search for a Song, Album or Artist" aria-label="Search">
         <i v-show="search.length && !loading" @click="clearSearch()" class="fa fa-2x fa-times"></i>
         <i v-show="loading" class="fa fa-2x fa-spinner fa-pulse"></i>
         <div v-show="hasFocus && suggestions.length > 0" class="suggestions">
@@ -74,7 +74,10 @@ export default {
       this.playerApi.seekToPercentage(percentageToJump)
     },
     'onSubmit': function () {
-      this.playerApi.search(this.search)
+      if (this.search.length > 1) {
+        this.playerApi.search(this.search)
+        this.$refs.searchBox.blur()
+      }
     }
   }
 }

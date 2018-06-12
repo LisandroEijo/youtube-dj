@@ -11,6 +11,7 @@ $secondary: #5A85CA;
 body {
   color: $dark;
   background: $light;
+  font-family: 'Lato', sans-serif;
 }
 
 .progress {
@@ -89,7 +90,6 @@ body {
 }
 
 .cover {
-  position: relative;
   text-align: center;
   width: 100%;
   overflow: hidden;

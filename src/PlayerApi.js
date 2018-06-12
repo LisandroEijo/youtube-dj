@@ -175,6 +175,9 @@ class PlayerApi {
       videoId: videoId
     })
   }
+  queueClear () {
+    HTTP.post('/queue/clear/')
+  }
 
   play () {
     HTTP.post('/resume/')
