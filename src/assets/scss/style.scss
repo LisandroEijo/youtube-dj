@@ -26,22 +26,12 @@ body {
   grid-template-columns: auto 450px;
   grid-template-rows: 50px auto;
 }
-
-.navheader {
-  top: 0;
-  z-index: 1;
-  position: sticky;
+#header{
+  grid-row: 1 / 1;
+  grid-column: 1 / span 2;
+  padding:0 10px;
   background-color: #fff;
   border-bottom: 1px solid $light-border;
-
-  .fa {
-    cursor: pointer;
-    &.active,
-    &:hover {
-      color: $light;
-    }
-  }
-
   form {
     position: relative;
     .fa {
@@ -56,6 +46,40 @@ body {
       cursor: pointer;
     }
   }
+  input,
+  input:focus {
+    max-width: 550px;
+    position: relative;
+    z-index: 2;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid $primary;
+    padding: 0.375rem 3rem 0.375rem 0.75rem;
+    font-weight: 300;
+  }
+}
+.sidebar{
+  max-width: 450px;
+  grid-row: 2/ span 2;
+  grid-column: 2 / 2;
+}
+
+.header {
+  top: 0;
+  z-index: 1;
+  position: sticky;
+
+
+  .fa {
+    cursor: pointer;
+    &.active,
+    &:hover {
+      color: $light;
+    }
+  }
+
 
   .suggestions {
     position: absolute;
@@ -69,19 +93,6 @@ body {
       cursor: pointer;
       color: $secondary
     }
-  }
-
-  input,
-  input:focus {
-    position: relative;
-    z-index: 2;
-    border-radius: 0;
-    outline: none;
-    box-shadow: none;
-    border: none;
-    border-bottom: 2px solid $primary;
-    padding: 0.375rem 3rem 0.375rem 0.75rem;
-    font-weight: 300;
   }
 }
 
@@ -115,10 +126,4 @@ body {
   right: 5px;
   z-index: 2;
   font-size: 1.3em;
-}
-
-.sidebar{
-  max-width: 450px;
-  grid-row: 1 / span 2;
-  grid-column: 2 / 2;
 }

@@ -7,6 +7,9 @@
     }
   }
 }
+.ytp--progress-bar{
+
+}
 .progress {
   cursor: pointer;
   background-color: $light;
@@ -18,7 +21,7 @@
     font-weight: bold;
   }
 }
-.player-actions{
+.ytp--player-actions{
   color:$primary;
   font-size: 1.7rem;
   text-align: center;

@@ -1,39 +1,40 @@
 <template>
-  <b-row class="navheader p-2">
-    <b-col md="5" align-self="center" class="p-1">
-      <form v-on:submit.prevent="onSubmit">
-        <input ref="searchBox" class="form-control" @focus="hasFocus = true" @blur="closeAutotomplete()" @input="searchInput" v-model="search" type="search" placeholder="Search for a Song, Album or Artist" aria-label="Search">
-        <div class="search-actions-container">
-          <i v-show="search.length && !loading" @click="clearSearch()" class="icon-ytp--remove"></i>
-          <i v-show="loading" class="icon-ytp--loading"></i>
-        </div>
-        <div v-show="hasFocus && suggestions.length > 0" class="suggestions">
-          <div @click="useAutocomplete(suggestion)" v-for="suggestion in suggestions" class="suggestion" :key="suggestion">
-            {{suggestion}}
+  <div id="header">
+
+
+        <form v-on:submit.prevent="onSubmit">
+          <input ref="searchBox" class="form-control" @focus="hasFocus = true" @blur="closeAutotomplete()" @input="searchInput" v-model="search" type="search" placeholder="Search for a Song, Album or Artist" aria-label="Search">
+          <div class="search-actions-container">
+            <i v-show="search.length && !loading" @click="clearSearch()" class="icon-ytp--remove"></i>
+            <i v-show="loading" class="icon-ytp--loading"></i>
           </div>
+          <div v-show="hasFocus && suggestions.length > 0" class="suggestions">
+            <div @click="useAutocomplete(suggestion)" v-for="suggestion in suggestions" class="suggestion" :key="suggestion">
+              {{suggestion}}
+            </div>
+          </div>
+        </form>
+        <div class="ytp--player-actions">
+          <i @click="playerApi.prevTrack()" class="icon-ytp--previous"></i>
+          <i v-if="playerApi.isPaused" @click="playerApi.play()" class="icon-ytp--play player-actions-main"></i>
+          <i v-if="!playerApi.isPaused" @click="playerApi.pause()" class="icon-ytp--pause player-actions-main"></i>
+          <i @click="playerApi.nextTrack()" class="icon-ytp--next"></i>
+          <i v-show="!playerApi.isMusicServerSet || playerApi.isMusicServer" @click="playerApi.convertIntoMusicServer()" :class="{active: playerApi.isMusicServer}" class="icon-ytp--transmit"></i>
         </div>
-      </form>
-    </b-col>
+        <div class="ytp--progress-bar">
+          <div class="time-container">
+            <span class="time-actual">{{playerApi.getTimePlayeDisplay()}}</span>
+            <span class="time-total">{{playerApi.getTrackLengthDisplay()}}</span>
+          </div>
+          <b-progress :max="playerApi.trackLength">
+            <b-progress-bar :value="playerApi.timePlayed">
+            </b-progress-bar>
+          </b-progress>
+        </div>
 
-    <b-col cols="12" sm="4" md="3" align-self="center" class="player-actions">
-      <i @click="playerApi.prevTrack()" class="icon-ytp--previous"></i>
-      <i v-if="playerApi.isPaused" @click="playerApi.play()" class="icon-ytp--play player-actions-main"></i>
-      <i v-if="!playerApi.isPaused" @click="playerApi.pause()" class="icon-ytp--pause player-actions-main"></i>
-      <i @click="playerApi.nextTrack()" class="icon-ytp--next"></i>
-      <i v-show="!playerApi.isMusicServerSet || playerApi.isMusicServer" @click="playerApi.convertIntoMusicServer()" :class="{active: playerApi.isMusicServer}" class="icon-ytp--transmit"></i>
-    </b-col>
 
-    <b-col @click="seek" cols="12" sm="8" md="4" align-self="center" class="p-1">
-      <div class="time-container">
-        <span class="time-actual">{{playerApi.getTimePlayeDisplay()}}</span>
-        <span class="time-total">{{playerApi.getTrackLengthDisplay()}}</span>
-      </div>
-      <b-progress :max="playerApi.trackLength">
-        <b-progress-bar :value="playerApi.timePlayed">
-        </b-progress-bar>
-      </b-progress>
-    </b-col>
-  </b-row>
+
+  </div>
 </template>
 
 <script>
