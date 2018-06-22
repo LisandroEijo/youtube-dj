@@ -1,22 +1,19 @@
 <template>
   <div>
-    <b-container fluid>
+    <div class="container-grid">
       <Nav></Nav>
-      <b-row>
-        <b-col md="7" class="p-0">
-          <SearchResults></SearchResults>
-        </b-col>
-        <b-col md="5" class="p-0">
-          <div v-show="playerApi.isMusicServer" id="player"></div>
-          <div v-show="!playerApi.isMusicServer" class="cover">
-            <div>{{playerApi.trackDetails.title}}</div>
-            <img v-show="!playerApi.trackDetails.thumbnail" src="@/assets/main-bg.png">
-            <img :src="playerApi.trackDetails.thumbnail">
-          </div>
-          <Queue></Queue>
-        </b-col>
-      </b-row>
-    </b-container>
+      <SearchResults></SearchResults>
+      <div class="sidebar">
+        <div v-show="playerApi.isMusicServer" id="player"></div>
+        <div v-show="!playerApi.isMusicServer" class="cover">
+          <div>{{playerApi.trackDetails.title}}</div>
+          <img v-show="!playerApi.trackDetails.thumbnail" src="@/assets/img/main-bg.png">
+          <img :src="playerApi.trackDetails.thumbnail">
+        </div>
+        <Queue></Queue>
+      </div>
+
+    </div>
   </div>
 </template>
 

@@ -1,0 +1,34 @@
+.time-container{
+  span {
+    font-size: 0.8em;
+    font-weight: 900;
+    &.time-total{
+      float: right;
+    }
+  }
+}
+.progress {
+  cursor: pointer;
+  background-color: $light;
+  height: 4px;
+  .progress-bar {
+    background: rgb(71,147,221);
+    background: linear-gradient(90deg, rgba(71,147,221,1) 0%, rgba(46,184,158,1) 100%);
+    color: $primary;
+    font-weight: bold;
+  }
+}
+.player-actions{
+  color:$primary;
+  font-size: 1.7rem;
+  text-align: center;
+  i{
+    &:hover{
+      color:$links;
+    }
+  }
+  &-main{
+    font-size: 1.1em;
+    padding: 0 7px;
+  }
+}

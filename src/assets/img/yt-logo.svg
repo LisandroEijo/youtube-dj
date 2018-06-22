@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 279 279">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4793dd"/>
+      <stop offset="1" stop-color="#2eb89e"/>
+    </linearGradient>
+  </defs>
+  <g id="Symbol_5_1" data-name="Symbol 5 – 1" transform="translate(-618 -411)">
+    <circle id="Ellipse_8" data-name="Ellipse 8" class="cls-1" cx="139.5" cy="139.5" r="139.5" transform="translate(618 411)"/>
+    <g id="Group_14" data-name="Group 14" transform="translate(717 477)">
+      <path id="Path_30" data-name="Path 30" class="cls-2" d="M82.5,104.3l-45-26a4.974,4.974,0,0,0-5,8.6l36.3,20.9L10,132.4V5.1a4.951,4.951,0,0,0-5-5,4.951,4.951,0,0,0-5,5V139.9a5.082,5.082,0,0,0,2.2,4.2,4.592,4.592,0,0,0,2.8.8,4.058,4.058,0,0,0,1.9-.4l75-31.3a5.059,5.059,0,0,0,3.1-4.3A5,5,0,0,0,82.5,104.3Z"/>
+      <path id="Path_31" data-name="Path 31" class="cls-2" d="M74,81.5a4.951,4.951,0,0,0,5-5V5A5,5,0,0,0,69,5V76.5A4.951,4.951,0,0,0,74,81.5Z"/>
+      <path id="Path_32" data-name="Path 32" class="cls-2" d="M51,72.5a4.951,4.951,0,0,0,5-5V30a5,5,0,0,0-10,0V67.5A4.951,4.951,0,0,0,51,72.5Z"/>
+      <path id="Path_33" data-name="Path 33" class="cls-2" d="M29.5,69.5h0a5.037,5.037,0,0,0,5-5.1L34,28.9a5,5,0,1,0-10,.2l.5,35.5A5,5,0,0,0,29.5,69.5Z"/>
+    </g>
+  </g>
+</svg>
