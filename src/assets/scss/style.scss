@@ -23,37 +23,22 @@ body {
 }
 .container-grid{
   display: grid;
-  grid-template-columns: auto 450px;
+  grid-template-columns: auto 200px 450px;
   grid-template-rows: 50px auto;
 }
 #header{
   grid-row: 1 / 1;
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 3;
   background-color: #fff;
   display:grid;
-  grid-template-columns: auto 450px;
-  grid-template-rows: 50px 50px;
+  grid-template-columns: auto 200px 450px;
+  border-bottom: 1px solid $light-border;
   .ytp--searchbar{
     padding: 5px 15px 0;
     grid-column: 1 / 1;
-    background-color: #fff;
-    border-bottom: 1px solid $light-border;
-  }
-  .ytp--player-control{
-    background-color: #fff;
-    border-left: 1px solid $light-border;
-    grid-column: 2 / 2;
-    z-index:2;
-    padding: 5px 15px 0;
-  }
-  .ytp--progress-bar{
-    grid-column: 2 / 2;
-    background-color: #fff;
-    border-left: 1px solid $light-border;
-    padding: 15px;
-    z-index:2
   }
   form {
+    max-width: 550px;
     position: relative;
     .fa {
       z-index: 3;
@@ -80,13 +65,53 @@ body {
     padding: 0.375rem 3rem 0.375rem 0.75rem;
     font-weight: 300;
   }
+  .suggestions{
+    background: #fff;
+    box-shadow: 0 3px 3px rgba(0,0,0, .15);
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+  .suggestion{
+    padding: 5px 0;
+  }
 }
 .sidebar{
   max-width: 450px;
   grid-row: 2/ span 2;
-  grid-column: 2 / 2;
+  grid-column: 3 / 3;
 }
+.transmit-btn-container{
+  margin: 5px auto;
+  .btn{
+    border:2px solid $secondary;
+    position: relative;
+    overflow: hidden;
 
+    i{
+      margin: 10px;
+      font-size: 1.8em;
+    }
+    &::after{
+      content:"transmitir"
+    }
+    &.active{
+      background-color: $secondary;
+      color:#fff;
+      &::after{
+        content:"transmitiendo"
+      }
+      &::before{
+        content:"";
+        width:1px;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+  }
+}
 .header {
   top: 0;
   z-index: 1;
@@ -100,8 +125,6 @@ body {
       color: $light;
     }
   }
-
-
   .suggestions {
     position: absolute;
     background-color: white;
@@ -116,17 +139,17 @@ body {
     }
   }
 }
-
+.cover,
 #player {
-  width: 100%;
-  overflow: hidden;
-}
-
-.cover {
   text-align: center;
   width: 100%;
   overflow: hidden;
-  background-color: $dark;
+  background-color: $light;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height:330px;
   img {
     width: 100%;
   }

@@ -14,7 +14,15 @@
         </div>
       </form>
     </div>
-    <div class="ytp--player-control">
+    <div class="transmit-btn-container">
+      <button v-show="!playerApi.isMusicServerSet || playerApi.isMusicServer"
+              @click="playerApi.convertIntoMusicServer()"
+              :class="{active: playerApi.isMusicServer}"
+              class="btn btn-sm">
+              <i class="icon-ytp--transmit"></i>
+      </button>
+    </div>
+    <!-- <div class="ytp--player-control">
       <i @click="playerApi.prevTrack()" class="icon-ytp--previous"></i>
       <i v-if="playerApi.isPaused" @click="playerApi.play()" class="icon-ytp--play player-actions-main"></i>
       <i v-if="!playerApi.isPaused" @click="playerApi.pause()" class="icon-ytp--pause player-actions-main"></i>
@@ -30,7 +38,7 @@
         <b-progress-bar :value="playerApi.timePlayed">
         </b-progress-bar>
       </b-progress>
-    </div>
+    </div> -->
   </div>
 </template>
 

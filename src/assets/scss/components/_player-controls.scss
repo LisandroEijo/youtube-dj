@@ -1,3 +1,31 @@
+.ytp--controls{
+  background: #fff;
+  padding-top: 280px;
+  border-left: 1px solid $light-border;
+}
+.ytp--player-control{
+  padding: 25px 15px 0;
+}
+.ytp--progress-bar{
+  border-bottom: 1px solid $lighter;
+  padding: 5px 25px 25px;
+}
+.ytp--player-control{
+  color:$primary;
+  font-size: 1.7rem;
+  text-align: center;
+  i{
+    &:hover{
+      color:$links;
+    }
+  }
+  &-main{
+    font-size: 1.1em;
+    padding: 0 30px;
+  }
+}
+
+
 .time-container{
   span {
     font-size: 0.8em;
@@ -17,19 +45,16 @@
     background: linear-gradient(90deg, rgba(71,147,221,1) 0%, rgba(46,184,158,1) 100%);
     color: $primary;
     font-weight: bold;
-  }
-}
-.ytp--player-control{
-  color:$primary;
-  font-size: 1.7rem;
-  text-align: center;
-  i{
-    &:hover{
-      color:$links;
-    }
-  }
-  &-main{
-    font-size: 1.1em;
-    padding: 0 7px;
+    // &:after{
+    //   content:"";
+    //   display: block;
+    //   background:$secondary;
+    //   width: 15px;
+    //   height: 15px;
+    //   border-radius: 50%;
+    //   position: absolute;
+    //   border: 1px solid darken($secondary, 3);
+    //   box-shadow: 0px 2px 5px 1px rgba(#000, 0.20);
+    // }
   }
 }

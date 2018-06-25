@@ -10,6 +10,7 @@
           <img v-show="!playerApi.trackDetails.thumbnail" src="@/assets/img/main-bg.png">
           <img :src="playerApi.trackDetails.thumbnail">
         </div>
+        <PlayerControl></PlayerControl>
         <Queue></Queue>
       </div>
 
@@ -21,6 +22,7 @@
 import Nav from '../components/Nav.vue'
 import Queue from '../components/Queue.vue'
 import SearchResults from '../components/SearchResults.vue'
+import PlayerControl from '../components/PlayerControl.vue'
 export default {
   name: 'PlayerPage',
   data: function () {
@@ -31,7 +33,8 @@ export default {
   components: {
     Nav,
     Queue,
-    SearchResults
+    SearchResults,
+    PlayerControl
   }
 }
 </script>

@@ -1,5 +1,6 @@
 .queue{
   background-color: $lighter;
+  border-left: 1px solid $light-border;
   .track{
     position: relative;
     height: 70px;
