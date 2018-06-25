@@ -29,9 +29,30 @@ body {
 #header{
   grid-row: 1 / 1;
   grid-column: 1 / span 2;
-  padding:0 10px;
   background-color: #fff;
-  border-bottom: 1px solid $light-border;
+  display:grid;
+  grid-template-columns: auto 450px;
+  grid-template-rows: 50px 50px;
+  .ytp--searchbar{
+    padding: 5px 15px 0;
+    grid-column: 1 / 1;
+    background-color: #fff;
+    border-bottom: 1px solid $light-border;
+  }
+  .ytp--player-control{
+    background-color: #fff;
+    border-left: 1px solid $light-border;
+    grid-column: 2 / 2;
+    z-index:2;
+    padding: 5px 15px 0;
+  }
+  .ytp--progress-bar{
+    grid-column: 2 / 2;
+    background-color: #fff;
+    border-left: 1px solid $light-border;
+    padding: 15px;
+    z-index:2
+  }
   form {
     position: relative;
     .fa {
