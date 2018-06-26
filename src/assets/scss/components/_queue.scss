@@ -1,6 +1,7 @@
 .queue{
   background-color: $lighter;
-  border-left: 1px solid $light-border;
+  overflow-y: scroll;
+  max-height: calc( 100vh - 455px);
   .track{
     position: relative;
     height: 70px;
@@ -79,81 +80,3 @@
   right: -100%;
   opacity:0
 }
-
-
-
-// .queue {
-//   overflow: hidden;
-//   background:$lighter;
-//   .button {
-//     cursor: pointer;
-//     text-align: center;
-//     padding: 0.6rem;
-//     color: $links;
-//     &:hover {
-//       color: darken($links, 10%);
-//     }
-//   }
-//   .track {
-//     min-height: 3rem;
-//     // perspective: 1000px;
-//     &:hover .actions {
-//       // transition-delay: 1s;
-//       opacity: 1;
-//     }
-//     &:hover .track-info {
-//       transition: 0.2s ease-in-out;
-//       transform: translatex(80px);
-//     }
-
-//     .track-info {
-//       cursor: pointer;
-//       min-height: 3rem;
-//       color: $gray;
-//       border-bottom: 1px solid $lighter;
-//       background-color: #fff;
-//       transform-origin: 100% 50%;
-//       transition: transform 0.4s linear 0.1s;
-//       transform: rotateY(0deg);
-
-
-//       &:hover {
-//         box-shadow: 0 0 5px rgba(0,0,0, 0.15)
-//       }
-//       &.active {
-//         border-right: 0.5rem solid $primary;
-//         background: lighten($dark, 5%);
-//       }
-//     }
-//     .title {
-//       text-align: left;
-//       padding: 10px;
-//     }
-//   }
-
-//   .actions {
-//     transition: opacity 0.5s;
-//     opacity: 0;
-//     position: absolute;
-//     left: 0;
-//     top: calc(50% - 1.5rem);
-//     height: 3rem;
-//     width: 50%;
-//     overflow: hidden;
-//     display: flex;
-//     flex-direction: column;
-
-//     .action {
-//       cursor: pointer;
-//       width: 30%;
-//       height: 1.5rem;
-//       line-height: 1.5rem;
-//       text-align: center;
-//       color: $dark;
-//       z-index: 1;
-//       &:hover {
-//         color: $light;
-//       }
-//     }
-//   }
-// }
