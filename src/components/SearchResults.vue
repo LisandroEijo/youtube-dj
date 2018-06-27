@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main-section">
     <div v-show="playerApi.searching" style="text-align: center" class="py-2">Loading...</div>
     <div class="search-results" v-show="playerApi.searchResults.length">
       <p>Search results</p>

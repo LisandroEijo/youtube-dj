@@ -1,5 +1,6 @@
 .queue{
   background-color: $lighter;
+  overflow-x: hidden;
   overflow-y: scroll;
   max-height: calc( 100vh - 455px);
   .track{
