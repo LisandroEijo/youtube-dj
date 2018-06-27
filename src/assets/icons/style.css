@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?2xga3c');
-  src:  url('fonts/icomoon.eot?2xga3c#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?2xga3c') format('truetype'),
-    url('fonts/icomoon.woff?2xga3c') format('woff'),
-    url('fonts/icomoon.svg?2xga3c#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?7eipdt');
+  src:  url('fonts/icomoon.eot?7eipdt#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7eipdt') format('truetype'),
+    url('fonts/icomoon.woff?7eipdt') format('woff'),
+    url('fonts/icomoon.svg?7eipdt#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,6 +48,15 @@ i {
 .icon-ytp--next:before {
   content: "\e907";
 }
+.icon-ytp--transmit__hi:before {
+  content: "\e90c";
+}
+.icon-ytp--transmit__mid:before {
+  content: "\e910";
+}
+.icon-ytp--transmit__low:before {
+  content: "\e911";
+}
 .icon-ytp--remove:before {
   content: "\e908";
 }
@@ -59,9 +68,6 @@ i {
 }
 .icon-ytp--shuffle:before {
   content: "\e90b";
-}
-.icon-ytp--transmit:before {
-  content: "\e90c";
 }
 .icon-ytp--trashcan:before {
   content: "\e90d";

@@ -20,7 +20,6 @@
               @click="playerApi.convertIntoMusicServer()"
               :class="{active: playerApi.isMusicServer}"
               class="btn btn-sm">
-              <i class="icon-ytp--transmit"></i>
       </button>
     </div>
     <!-- <div class="ytp--player-control">

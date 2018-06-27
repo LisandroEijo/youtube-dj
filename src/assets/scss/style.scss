@@ -38,12 +38,20 @@ body {
 
 }
 .sidebar{
-  max-width: 450px;
+  // max-width: 450px;
   grid-row: 2/ span 2;
   grid-column: 3 / 3;
   height: calc(100vh - 50px);
   background: #fff;
   border-right: 1px solid $light-border;
+}
+#main-section{
+  background: url("../img/yt-logo.svg") no-repeat 50% 50%;
+  background-size: 250px;
+  grid-column: 1 / span 2;
+  grid-row: 2/ span 2;
+  overflow-y: auto;
+  max-height: calc(100vh - 50px);
 }
 .transmit-btn-container{
   margin: 5px auto;
@@ -51,9 +59,15 @@ body {
     border:2px solid $secondary;
     position: relative;
     overflow: hidden;
-    i{
-      margin: 10px;
-      font-size: 1.8em;
+    background-color: transparent;
+    &::before{
+      font-family: 'icomoon';
+      content:"\e90c";
+      display: inline-block;
+      font-size: 1.5em;
+      line-height: 1em;
+      margin-right: 10px;
+      vertical-align: middle;
     }
     &::after{
       content:"transmitir"
@@ -65,17 +79,7 @@ body {
         content:"transmitiendo"
       }
       &::before{
-        content:"";
-        width:100%;
-        height: 50px;
-        transform-origin: center;
-        transform: translate(-100%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: lighten($secondary, 10);
-        @include animation(rotate1, .8s, infinite, linear);
-        z-index:0
+        @include animation(transmit, .8s, infinite, linear);
       }
     }
 
@@ -110,18 +114,17 @@ body {
   }
 }
 
-@include keyframes(rotate1){
+@include keyframes(transmit){
   0%{
-    opacity:0.2;
-    transform: scale(1) ;
-
-  } 50% {
-    opacity:0;
-    transform: scale(.9) ;
-
+    content: "\e911";
+    opacity:1
+  } 25% {
+    content: "\e910";
+  }50% {
+    content: "\e90c";
+    opacity:.5
   } 100%{
-    opacity:0.2;
-    transform: scale(1) ;
+    content: "\e910" ;
 
   }
 }
