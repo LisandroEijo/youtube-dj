@@ -3,10 +3,10 @@
     <div class="ytp--searchbar">
       <form v-on:submit.prevent="onSubmit">
         <input ref="searchBox" class="searchbar--input" @focus="hasFocus = true" @blur="closeAutotomplete()" @input="searchInput" v-model="search" type="search" placeholder="Search for a Song, Album or Artist" aria-label="Search">
-        <i class="icon-ytp--search"></i>
         <div class="search-actions-container">
+          <i v-show="!search.length && !loading" class="icon-ytp--search"></i>
           <i v-show="search.length && !loading" @click="clearSearch()" class="icon-ytp--remove"></i>
-          <i v-show="loading" class="icon-ytp--loading"></i>
+          <i v-show="loading" class="icon-ytp--loading ytp--spin"></i>
         </div>
         <div v-show="hasFocus && suggestions.length > 0" class="suggestions">
           <div @click="useAutocomplete(suggestion)" v-for="suggestion in suggestions" class="suggestion" :key="suggestion">

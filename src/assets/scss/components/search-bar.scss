@@ -18,12 +18,12 @@ form {
   border-bottom: 2px solid $primary;
   padding: 0.375rem 3rem 0.375rem 0.75rem;
   font-weight: 300;
-  &:not(:focus){
-    background-image:url('../img/ytp--search.svg');
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
-    background-size: 25px;
-  }
+  // &:not(:focus){
+  //   background-image:url('../img/ytp--search.svg');
+  //   background-repeat: no-repeat;
+  //   background-position: 98% 50%;
+  //   background-size: 25px;
+  // }
 }
 .suggestions{
   background: #fff;
@@ -45,4 +45,5 @@ form {
   right: 5px;
   z-index: 2;
   font-size: 1.3em;
+  color:$secondary
 }
