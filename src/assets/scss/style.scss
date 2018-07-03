@@ -8,11 +8,11 @@ $light-border:darken($light,1);
 $lighter:#EDF4FB;
 $links: saturate(lighten($primary, 10), 30);
 
+@import 'includes/mixins';
 @import 'components/_queue';
 @import 'components/_search_results';
 @import 'components/player-controls';
 @import 'components/search-bar';
-@import 'includes/mixins';
 
 i[class^=icon]{
   vertical-align: middle;

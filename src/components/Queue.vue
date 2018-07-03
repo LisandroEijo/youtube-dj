@@ -5,16 +5,15 @@
           <div class="action remove" @click="playerApi.unqueueTrack(item.videoId)"><i class="icon-ytp--remove"></i></div>
           <div class="track-info" :class="{ active: playerApi.currentTrack == item.videoId}">
             <div class="title">
+              <span :class="{ playingNow: playerApi.currentTrack == item.videoId}"></span>
               {{item.title}}
             </div>
-          </div>
-          <div class="actions">
-            <div class="action" @click="playerApi.queueChangeTo(index)"><i class="icon-ytp--play"></i></div>
+            <span class="action" @click="playerApi.queueChangeTo(index)"><i class="icon-ytp--play"></i> play it now</span>
           </div>
       </div>
     </transition-group>
-    <div v-show="playerApi.queue.length > 5" class="button" @click="playerApi.queueClear()">
-      Clear Queue
+    <div v-show="playerApi.queue.length > 2" class="button clearQueue" @click="playerApi.queueClear()">
+        <i class="icon-ytp--trashcan"></i>  Clear Queue
     </div>
   </div>
 </template>
