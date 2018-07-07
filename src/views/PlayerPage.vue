@@ -10,6 +10,7 @@
           <img v-show="!playerApi.trackDetails.thumbnail" src="@/assets/img/main-bg.png">
           <img :src="playerApi.trackDetails.thumbnail">
         </div>
+        <!-- <p>{{playerApi.trackDetails.title}}</p> -->
         <PlayerControl></PlayerControl>
         <Queue></Queue>
       </div>

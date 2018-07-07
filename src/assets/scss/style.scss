@@ -120,15 +120,15 @@ body {
 
 @include keyframes(transmit){
   0%{
-    content: "\e911";
+    content: "\e90d";
     opacity:1
   } 25% {
-    content: "\e910";
-  }50% {
     content: "\e90c";
+  }50% {
+    content: "\e90b";
     opacity:.5
   } 100%{
-    content: "\e910" ;
+    content: "\e90c" ;
 
   }
 }

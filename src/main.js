@@ -11,7 +11,7 @@ import PlayerApi from './PlayerApi'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'font-awesome/css/font-awesome.css'
-import './assets/icons/style.css'
+import './assets/icons/outlined/style.css'
 
 import './assets/scss/style.scss'
 

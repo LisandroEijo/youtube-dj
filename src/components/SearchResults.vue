@@ -7,12 +7,12 @@
           <img :src="item.snippet.thumbnails.default.url" />
           <div class="p-2">
             <div class="info">{{item.snippet.title}}</div>
-            <a href="" @click="playerApi.queueTrack(item.id.videoId)" class="result-action">
+            <span @click="playerApi.queueTrack(item.id.videoId)" class="result-action">
               <i class="icon-ytp--add-to-queue"></i> Add to Queue
-            </a>
-            <a href="" @click="playerApi.queueTrackNext(item.id.videoId)"  class="result-action">
+            </span>
+            <span @click="playerApi.queueTrackNext(item.id.videoId)"  class="result-action">
               <i class="icon-ytp--add-next"></i> Play Next
-            </a>
+            </span>
           </div>
         </div>
       </transition-group>
